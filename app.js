@@ -22,6 +22,7 @@
   const adminRows = document.querySelector("[data-admin-rows]");
 
   setupNavigation();
+  setupRoutes();
   setupLoginTabs();
   setupLoginForms();
   setupVoting();
@@ -29,6 +30,40 @@
   setupEmailForms();
   restoreSession();
   refreshDashboard();
+
+  function setupRoutes() {
+    document.querySelectorAll("[data-route]").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const route = link.getAttribute("data-route") || "home";
+        showView(route);
+      });
+    });
+
+    window.addEventListener("hashchange", () => {
+      showView(getRouteFromHash(), { updateHash: false });
+    });
+
+    showView(getRouteFromHash(), { updateHash: false });
+  }
+
+  function showView(route, options = {}) {
+    const nextRoute = document.querySelector(`[data-view="${route}"]`) ? route : "home";
+    document.querySelectorAll("[data-view]").forEach((screen) => {
+      screen.classList.toggle("is-active-view", screen.getAttribute("data-view") === nextRoute);
+    });
+    document.querySelectorAll("[data-route]").forEach((link) => {
+      link.classList.toggle("is-current", link.getAttribute("data-route") === nextRoute);
+    });
+    if (options.updateHash !== false) {
+      history.pushState(null, "", `#${nextRoute}`);
+    }
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }
+
+  function getRouteFromHash() {
+    return window.location.hash.replace("#", "") || "home";
+  }
 
   function setupNavigation() {
     if (!menuButton || !nav) return;
@@ -99,10 +134,10 @@
     document.querySelector("[data-logout]")?.addEventListener("click", () => {
       state.session = null;
       localStorage.removeItem(storageKeys.session);
-      workspace?.classList.add("is-hidden");
+      workspace?.classList.remove("is-active-view");
       voterPanel?.classList.add("is-hidden");
       adminPanel?.classList.add("is-hidden");
-      document.querySelector("#login")?.scrollIntoView({ behavior: "smooth" });
+      showView("login");
     });
   }
 
@@ -214,12 +249,11 @@
     state.session = session;
     writeJson(storageKeys.session, session);
     restoreSession();
-    workspace?.scrollIntoView({ behavior: "smooth" });
+    showView("workspace");
   }
 
   function restoreSession() {
     if (!state.session) return;
-    workspace?.classList.remove("is-hidden");
     voterPanel?.classList.toggle("is-hidden", state.session.role !== "voter");
     adminPanel?.classList.toggle("is-hidden", state.session.role !== "admin");
     sessionLabel.textContent = state.session.role === "admin" ? "Administrator Dashboard" : "Voter Workspace";

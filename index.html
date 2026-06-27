@@ -9,7 +9,7 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#home" aria-label="PSZ Elections home">
+      <a class="brand" href="#home" data-route="home" aria-label="PSZ Elections home">
         <span class="brand-mark" aria-hidden="true"><span>PSZ</span></span>
         <span class="brand-copy">
           <strong>Pharmaceutical<br>Society of Zambia</strong>
@@ -24,23 +24,23 @@
       </button>
 
       <nav class="nav" data-nav>
-        <a href="#home">Home</a>
-        <a href="#how">How It Works</a>
-        <a href="#counter">Voter Counter</a>
-        <a href="#login">Login</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" data-route="home">Home</a>
+        <a href="#how" data-route="how">How It Works</a>
+        <a href="#counter" data-route="counter">Voter Counter</a>
+        <a href="#login" data-route="login">Login</a>
+        <a href="#contact" data-route="contact">Contact</a>
       </nav>
     </header>
 
     <main>
-      <section class="hero" id="home">
+      <section class="hero view-screen is-active-view" id="home" data-view="home">
         <div class="hero-content">
           <p class="eyebrow">PSZ 2026 Elections</p>
           <h1>Welcome to the official digital voting portal.</h1>
           <p class="hero-copy">Participate. Vote. Shape the future. Members can log in, verify their eligibility, cast a vote, and receive confirmation through the elections desk.</p>
           <div class="hero-actions">
-            <a class="primary-action" href="#login"><span aria-hidden="true">✓</span> Cast your vote</a>
-            <a class="secondary-action" href="#how"><span aria-hidden="true">i</span> How it works</a>
+            <a class="primary-action" href="#login" data-route="login"><span aria-hidden="true">✓</span> Cast your vote</a>
+            <a class="secondary-action" href="#how" data-route="how"><span aria-hidden="true">i</span> How it works</a>
           </div>
         </div>
         <div class="hero-visual" aria-label="PSZ member using the voting portal">
@@ -52,7 +52,7 @@
         </div>
       </section>
 
-      <section class="how" id="how">
+      <section class="how view-screen" id="how" data-view="how">
         <div class="section-heading center">
           <p class="eyebrow">How It Works</p>
           <h2>Simple, transparent participation</h2>
@@ -81,7 +81,7 @@
         </div>
       </section>
 
-      <section class="counter-section" id="counter">
+      <section class="counter-section view-screen" id="counter" data-view="counter">
         <aside class="counter-card" aria-label="Voter turnout counter">
           <span class="counter-label">Voter Counter</span>
           <strong data-votes-cast>0</strong>
@@ -95,7 +95,7 @@
         </div>
       </section>
 
-      <section class="login-section" id="login">
+      <section class="login-section view-screen" id="login" data-view="login">
         <div class="login-copy">
           <p class="eyebrow">Member Access</p>
           <h2>Log in to continue.</h2>
@@ -136,7 +136,7 @@
         </div>
       </section>
 
-      <section class="workspace is-hidden" data-workspace>
+      <section class="workspace view-screen" id="workspace" data-view="workspace" data-workspace>
         <div class="workspace-header">
           <div>
             <p class="eyebrow" data-session-label>Election Workspace</p>
@@ -221,7 +221,7 @@
         </section>
       </section>
 
-      <section class="contact" id="contact">
+      <section class="contact view-screen" id="contact" data-view="contact">
         <div class="section-heading">
           <p class="eyebrow">Contact</p>
           <h2>Email the elections team</h2>
