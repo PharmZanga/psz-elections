@@ -28,6 +28,7 @@
         <a href="#how" data-route="how">How It Works</a>
         <a href="#counter" data-route="counter">Voter Counter</a>
         <a href="#login" data-route="login">Login</a>
+        <a href="#login" data-route="admin-login">Admin Dashboard</a>
         <a href="#contact" data-route="contact">Contact</a>
       </nav>
     </header>
@@ -99,7 +100,7 @@
         <div class="login-copy">
           <p class="eyebrow">Member Access</p>
           <h2>Log in to continue.</h2>
-          <p>Use the voter login for member voting. Election officers can use the administrator login to compare vote records against the voter register.</p>
+          <p>Use the voter login for member voting. Election officers can open the admin dashboard to compare vote records against the voter register.</p>
         </div>
 
         <div class="login-card">
@@ -128,7 +129,7 @@
             </label>
             <label>
               Admin access code
-              <input name="code" type="password" autocomplete="current-password" placeholder="Enter access code" required>
+              <input name="code" type="password" autocomplete="current-password" placeholder="Default: PSZ2026" required>
             </label>
             <button type="submit">Open dashboard</button>
             <p class="form-status" role="status" data-status></p>
