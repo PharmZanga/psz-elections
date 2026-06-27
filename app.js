@@ -48,12 +48,17 @@
   }
 
   function showView(route, options = {}) {
+    if (route === "admin-login") {
+      activateLoginTab("admin");
+      route = "login";
+    }
     const nextRoute = document.querySelector(`[data-view="${route}"]`) ? route : "home";
     document.querySelectorAll("[data-view]").forEach((screen) => {
       screen.classList.toggle("is-active-view", screen.getAttribute("data-view") === nextRoute);
     });
     document.querySelectorAll("[data-route]").forEach((link) => {
-      link.classList.toggle("is-current", link.getAttribute("data-route") === nextRoute);
+      const linkRoute = link.getAttribute("data-route");
+      link.classList.toggle("is-current", linkRoute === nextRoute || (linkRoute === "admin-login" && route === "login"));
     });
     if (options.updateHash !== false) {
       history.pushState(null, "", `#${nextRoute}`);
@@ -84,14 +89,17 @@
   function setupLoginTabs() {
     document.querySelectorAll("[data-login-tab]").forEach((tab) => {
       tab.addEventListener("click", () => {
-        const target = tab.getAttribute("data-login-tab");
-        document.querySelectorAll("[data-login-tab]").forEach((node) => {
-          node.classList.toggle("is-active", node === tab);
-        });
-        document.querySelectorAll("[data-login-form]").forEach((form) => {
-          form.classList.toggle("is-hidden", form.getAttribute("data-login-form") !== target);
-        });
+        activateLoginTab(tab.getAttribute("data-login-tab") || "voter");
       });
+    });
+  }
+
+  function activateLoginTab(target) {
+    document.querySelectorAll("[data-login-tab]").forEach((node) => {
+      node.classList.toggle("is-active", node.getAttribute("data-login-tab") === target);
+    });
+    document.querySelectorAll("[data-login-form]").forEach((form) => {
+      form.classList.toggle("is-hidden", form.getAttribute("data-login-form") !== target);
     });
   }
 
@@ -104,9 +112,10 @@
         const status = form.querySelector("[data-status]");
 
         if (formType === "admin") {
-          const expectedCode = settings.adminAccessCode || "PSZ2026";
-          if (String(data.code || "").trim() !== expectedCode) {
-            setStatus(status, "Invalid administrator access code.");
+          const expectedCode = String(settings.adminAccessCode || "PSZ2026").trim().toUpperCase();
+          const submittedCode = String(data.code || "").trim().toUpperCase();
+          if (submittedCode !== expectedCode) {
+            setStatus(status, "Invalid administrator access code. Use PSZ2026 unless it has been changed.");
             return;
           }
           startSession({ role: "admin", email: normalizeEmail(data.email) });
