@@ -4,16 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PSZ 2026 Elections</title>
-    <meta name="description" content="Pharmaceutical Society of Zambia 2026 Elections portal for voter information, turnout updates, resources, and support.">
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <meta name="description" content="Official PSZ 2026 Elections portal for member login, secure voting, turnout monitoring, and administrator reporting.">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#home" aria-label="PSZ Elections home">
-        <span class="brand-mark" aria-hidden="true">
-          <span>PSZ</span>
-        </span>
+        <span class="brand-mark" aria-hidden="true"><span>PSZ</span></span>
         <span class="brand-copy">
           <strong>Pharmaceutical<br>Society of Zambia</strong>
           <b>PSZ</b>
@@ -28,96 +25,200 @@
 
       <nav class="nav" data-nav>
         <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#resources">Resources</a>
+        <a href="#how">How It Works</a>
         <a href="#counter">Voter Counter</a>
+        <a href="#login">Login</a>
         <a href="#contact">Contact</a>
-        <a class="login-link" href="#login">Login</a>
       </nav>
     </header>
 
-    <main id="home">
-      <section class="hero">
+    <main>
+      <section class="hero" id="home">
         <div class="hero-content">
-          <p class="eyebrow">2026 PSZ Elections</p>
-          <h1>Member election portal for verified PSZ voters.</h1>
-          <p class="hero-copy">Track turnout, access election resources, request support, and receive email assistance from the elections team.</p>
+          <p class="eyebrow">PSZ 2026 Elections</p>
+          <h1>Welcome to the official digital voting portal.</h1>
+          <p class="hero-copy">Participate. Vote. Shape the future. Members can log in, verify their eligibility, cast a vote, and receive confirmation through the elections desk.</p>
           <div class="hero-actions">
-            <a class="primary-action" href="#login">Member login</a>
-            <a class="secondary-action" href="#contact">Request help</a>
+            <a class="primary-action" href="#login"><span aria-hidden="true">✓</span> Cast your vote</a>
+            <a class="secondary-action" href="#how"><span aria-hidden="true">i</span> How it works</a>
           </div>
         </div>
-        <aside class="counter-card" id="counter" aria-label="Voter turnout counter">
-          <span class="counter-label">Counter</span>
-          <strong data-votes-cast>2</strong>
-          <p><b data-voters-cast-label>2</b> of <b data-total-voters>476</b> Voters</p>
-          <span data-turnout>0.4% Turnout</span>
+        <div class="hero-visual" aria-label="PSZ member using the voting portal">
+          <div class="device-card">
+            <span>PSZ Elections</span>
+            <strong>Member verified</strong>
+            <p>Ballot access ready</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="how" id="how">
+        <div class="section-heading center">
+          <p class="eyebrow">How It Works</p>
+          <h2>Simple, transparent participation</h2>
+        </div>
+        <div class="steps">
+          <article>
+            <span class="step-number">1</span>
+            <h3>Register / Login</h3>
+            <p>Members sign in using their registered email or membership details.</p>
+          </article>
+          <article>
+            <span class="step-number">2</span>
+            <h3>Verify Identity</h3>
+            <p>The elections team checks the voter against the approved register.</p>
+          </article>
+          <article>
+            <span class="step-number">3</span>
+            <h3>Vote Securely</h3>
+            <p>Eligible members cast one vote and receive a confirmation record.</p>
+          </article>
+          <article>
+            <span class="step-number">4</span>
+            <h3>Results & Reports</h3>
+            <p>Administrators monitor turnout, voted members, and pending voters.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="counter-section" id="counter">
+        <aside class="counter-card" aria-label="Voter turnout counter">
+          <span class="counter-label">Voter Counter</span>
+          <strong data-votes-cast>0</strong>
+          <p><b data-voters-cast-label>0</b> of <b data-total-voters>477</b> registered voters</p>
+          <span data-turnout>0.0% Turnout</span>
         </aside>
-      </section>
-
-      <section class="section-band" id="about">
-        <div class="section-grid">
-          <div>
-            <p class="eyebrow">About</p>
-            <h2>Clear election information for every eligible member.</h2>
-          </div>
-          <div class="copy-stack">
-            <p>This portal is prepared for the Pharmaceutical Society of Zambia 2026 Elections. It provides a central place for election announcements, voting support, voter turnout, and account assistance.</p>
-            <p>For secure online voting, connect this public portal to a verified voter database and audited election backend before opening ballots.</p>
-          </div>
+        <div class="counter-copy">
+          <p class="eyebrow">Live Monitoring</p>
+          <h2>Turnout updates for the elections team.</h2>
+          <p>The counter is driven by submitted vote records when a backend is connected. In demo mode, it uses this browser's stored votes.</p>
         </div>
       </section>
 
-      <section class="resources" id="resources">
-        <div class="section-heading">
-          <p class="eyebrow">Resources</p>
-          <h2>Election desk</h2>
+      <section class="login-section" id="login">
+        <div class="login-copy">
+          <p class="eyebrow">Member Access</p>
+          <h2>Log in to continue.</h2>
+          <p>Use the voter login for member voting. Election officers can use the administrator login to compare vote records against the voter register.</p>
         </div>
-        <div class="resource-grid">
-          <article>
-            <span>01</span>
-            <h3>Voter register</h3>
-            <p>Confirm membership eligibility and voter roll status with the PSZ elections desk.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Candidate information</h3>
-            <p>Publish approved candidate profiles, manifestos, debate notices, and election circulars.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Help desk</h3>
-            <p>Send login, reset, and voting support requests directly to the elections email inbox.</p>
-          </article>
-        </div>
-      </section>
 
-      <section class="portal" id="login">
-        <div class="portal-panel">
-          <div>
-            <p class="eyebrow">Member Access</p>
-            <h2>Login support</h2>
-            <p>Members can request a password reset email or contact the election team if their account is not recognized.</p>
+        <div class="login-card">
+          <div class="tabs" role="tablist" aria-label="Login type">
+            <button type="button" class="is-active" data-login-tab="voter">Voter</button>
+            <button type="button" data-login-tab="admin">Admin</button>
           </div>
-          <form class="form" data-email-form="reset">
+
+          <form class="form" data-login-form="voter">
             <label>
-              Username or email
-              <input name="member" type="text" autocomplete="username" placeholder="Enter your username or email" required>
+              Registered email
+              <input name="email" type="email" autocomplete="email" placeholder="name@example.com" required>
             </label>
             <label>
-              Message
-              <textarea name="message" rows="4" placeholder="Briefly describe the issue">Please send me a password reset link for the 2026 PSZ Elections portal.</textarea>
+              Membership or NRC number
+              <input name="memberId" type="text" autocomplete="off" placeholder="Enter membership detail" required>
             </label>
-            <button type="submit">Reset password</button>
+            <button type="submit">Login as voter</button>
+            <p class="form-status" role="status" data-status></p>
+          </form>
+
+          <form class="form is-hidden" data-login-form="admin">
+            <label>
+              Admin email
+              <input name="email" type="email" autocomplete="email" placeholder="admin@pszelections.org" required>
+            </label>
+            <label>
+              Admin access code
+              <input name="code" type="password" autocomplete="current-password" placeholder="Enter access code" required>
+            </label>
+            <button type="submit">Open dashboard</button>
             <p class="form-status" role="status" data-status></p>
           </form>
         </div>
       </section>
 
-      <section class="thanks">
-        <div>
-          <h2>Thank you for exercising your right to vote in the 2026 PSZ Elections</h2>
+      <section class="workspace is-hidden" data-workspace>
+        <div class="workspace-header">
+          <div>
+            <p class="eyebrow" data-session-label>Election Workspace</p>
+            <h2 data-session-title>Dashboard</h2>
+          </div>
+          <button class="secondary-button" type="button" data-logout>Log out</button>
         </div>
+
+        <section class="voter-panel is-hidden" data-voter-panel>
+          <div class="ballot-card">
+            <p class="eyebrow">Ballot</p>
+            <h3>Cast your PSZ 2026 election vote</h3>
+            <p>Your vote will be recorded once for this registered email. Demo mode stores the record in this browser; live backend mode sends it to the configured database.</p>
+            <form class="form" data-vote-form>
+              <label>
+                Select your candidate
+                <select name="candidate" required>
+                  <option value="">Choose a candidate</option>
+                  <option value="Candidate A">Candidate A</option>
+                  <option value="Candidate B">Candidate B</option>
+                  <option value="Candidate C">Candidate C</option>
+                </select>
+              </label>
+              <button type="submit">Submit vote</button>
+              <p class="form-status" role="status" data-vote-status></p>
+            </form>
+          </div>
+        </section>
+
+        <section class="admin-panel is-hidden" data-admin-panel>
+          <div class="admin-tools">
+            <div class="tool-card">
+              <h3>1. Upload voter register</h3>
+              <p>Use the private CSV extracted from the PDF register. Required columns: name and email. The file is processed locally in the browser.</p>
+              <input type="file" accept=".csv,text/csv" data-register-upload>
+            </div>
+            <div class="tool-card">
+              <h3>2. Import vote records</h3>
+              <p>Optional: upload a vote export from your backend. Columns should include email and timestamp.</p>
+              <input type="file" accept=".csv,text/csv" data-vote-upload>
+            </div>
+            <div class="tool-card">
+              <h3>3. Export report</h3>
+              <p>Download the matched register showing who has voted, who is pending, and any votes outside the register.</p>
+              <button class="secondary-button" type="button" data-export-report>Export audit CSV</button>
+            </div>
+          </div>
+
+          <div class="metric-grid">
+            <article><span data-metric="registered">0</span><p>Registered</p></article>
+            <article><span data-metric="voted">0</span><p>Voted</p></article>
+            <article><span data-metric="pending">0</span><p>Pending</p></article>
+            <article><span data-metric="outside">0</span><p>Votes outside register</p></article>
+          </div>
+
+          <div class="table-shell">
+            <div class="table-toolbar">
+              <input type="search" placeholder="Search register or vote status" data-admin-search>
+              <select data-status-filter>
+                <option value="all">All voters</option>
+                <option value="voted">Voted</option>
+                <option value="pending">Pending</option>
+                <option value="outside">Outside register</option>
+              </select>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Voter</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Vote time</th>
+                  </tr>
+                </thead>
+                <tbody data-admin-rows>
+                  <tr><td colspan="4">Upload the register to begin.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
       </section>
 
       <section class="contact" id="contact">
