@@ -25,7 +25,7 @@ The website can send email through EmailJS without adding private server credent
 
 ```js
 window.PSZ_ELECTIONS_CONFIG = {
-  electionEmail: "elections@psz.org.zm",
+  electionEmail: "elections@pszelections.org",
   votesCast: 2,
   totalVoters: 476,
   email: {
