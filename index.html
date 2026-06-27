@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PSZ 2026 Elections</title>
+    <meta name="description" content="Pharmaceutical Society of Zambia 2026 Elections portal for voter information, turnout updates, resources, and support.">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="PSZ Elections home">
+        <span class="brand-mark" aria-hidden="true">
+          <span>PSZ</span>
+        </span>
+        <span class="brand-copy">
+          <strong>Pharmaceutical<br>Society of Zambia</strong>
+          <b>PSZ</b>
+        </span>
+      </a>
+
+      <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" data-menu-button>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" data-nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#resources">Resources</a>
+        <a href="#counter">Voter Counter</a>
+        <a href="#contact">Contact</a>
+        <a class="login-link" href="#login">Login</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="hero-content">
+          <p class="eyebrow">2026 PSZ Elections</p>
+          <h1>Member election portal for verified PSZ voters.</h1>
+          <p class="hero-copy">Track turnout, access election resources, request support, and receive email assistance from the elections team.</p>
+          <div class="hero-actions">
+            <a class="primary-action" href="#login">Member login</a>
+            <a class="secondary-action" href="#contact">Request help</a>
+          </div>
+        </div>
+        <aside class="counter-card" id="counter" aria-label="Voter turnout counter">
+          <span class="counter-label">Counter</span>
+          <strong data-votes-cast>2</strong>
+          <p><b data-voters-cast-label>2</b> of <b data-total-voters>476</b> Voters</p>
+          <span data-turnout>0.4% Turnout</span>
+        </aside>
+      </section>
+
+      <section class="section-band" id="about">
+        <div class="section-grid">
+          <div>
+            <p class="eyebrow">About</p>
+            <h2>Clear election information for every eligible member.</h2>
+          </div>
+          <div class="copy-stack">
+            <p>This portal is prepared for the Pharmaceutical Society of Zambia 2026 Elections. It provides a central place for election announcements, voting support, voter turnout, and account assistance.</p>
+            <p>For secure online voting, connect this public portal to a verified voter database and audited election backend before opening ballots.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="resources" id="resources">
+        <div class="section-heading">
+          <p class="eyebrow">Resources</p>
+          <h2>Election desk</h2>
+        </div>
+        <div class="resource-grid">
+          <article>
+            <span>01</span>
+            <h3>Voter register</h3>
+            <p>Confirm membership eligibility and voter roll status with the PSZ elections desk.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Candidate information</h3>
+            <p>Publish approved candidate profiles, manifestos, debate notices, and election circulars.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Help desk</h3>
+            <p>Send login, reset, and voting support requests directly to the elections email inbox.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="portal" id="login">
+        <div class="portal-panel">
+          <div>
+            <p class="eyebrow">Member Access</p>
+            <h2>Login support</h2>
+            <p>Members can request a password reset email or contact the election team if their account is not recognized.</p>
+          </div>
+          <form class="form" data-email-form="reset">
+            <label>
+              Username or email
+              <input name="member" type="text" autocomplete="username" placeholder="Enter your username or email" required>
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="4" placeholder="Briefly describe the issue">Please send me a password reset link for the 2026 PSZ Elections portal.</textarea>
+            </label>
+            <button type="submit">Reset password</button>
+            <p class="form-status" role="status" data-status></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="thanks">
+        <div>
+          <h2>Thank you for exercising your right to vote in the 2026 PSZ Elections</h2>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2>Email the elections team</h2>
+        </div>
+        <form class="form contact-form" data-email-form="contact">
+          <label>
+            Full name
+            <input name="name" type="text" autocomplete="name" required>
+          </label>
+          <label>
+            Email address
+            <input name="email" type="email" autocomplete="email" required>
+          </label>
+          <label>
+            Request type
+            <select name="requestType" required>
+              <option value="Login support">Login support</option>
+              <option value="Voter eligibility">Voter eligibility</option>
+              <option value="Election resources">Election resources</option>
+              <option value="General enquiry">General enquiry</option>
+            </select>
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button type="submit">Send email request</button>
+          <p class="form-status" role="status" data-status></p>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>Copyright © 2026 Pharmaceutical Society of Zambia</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
